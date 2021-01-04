@@ -1,0 +1,22 @@
+@{
+    Layout = "_Layout";
+}
+
+@model UniRegistrar.Models.Student
+
+<h1>Add a new student</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.StudentName)
+    @Html.TextBoxFor(model => model.StudentName)
+
+    @Html.LabelFor(model => model.EnrollmentDate)
+    @Html.TextBoxFor(model => model.EnrollmentDate, "{0:yyyy-MM-dd}", new {type="date"})
+
+    @Html.Label("Select course")
+    @Html.DropDownList("CourseId")
+
+    <input type="submit" value="Add new student" class="btn btn-default"/>
+}
+<p>@Html.ActionLink("Show all students", "Index")</p>

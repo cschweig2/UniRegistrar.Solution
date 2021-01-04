@@ -9,13 +9,13 @@
 
 @if (@Model.Count == 0)
 {
-    <h3>No students are enrolled<h3>
+    <h3>No students are enrolled</h3>
 }
 
 <ul>
 @foreach(Student student in Model)
 {
-    <li>@Html.ActionLink($"{student.StudentName}", "Details", new { id = student.StudentId})
+    <li>@Html.ActionLink($"{student.StudentName}", "Details", new { id = student.StudentId})</li>
 }
 </ul>
 

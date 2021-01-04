@@ -1,0 +1,41 @@
+@{
+    Layout = "_Layout";
+}
+
+@model UniRegistrar.Models.Student
+
+<h1>Student Details</h1>
+<br>
+<h3>Student Name: @Html.DisplayFor(model => model.StudentName) | Date Enrolled: @Html.DisplayFor(model => model.EnrollmentDate)</h3>
+
+@if (@Model.Courses.Count == 0)
+{
+    <p>This student is not enrolled in any courses</p>
+}
+else
+{
+    <h2>Courses this student is enrolled in:</h2>
+    <ul>
+        @foreach (var join in Model.Courses)
+            {
+                <li>@join.Course.CourseName</li>
+            }
+    </ul>
+}
+
+<ul>
+    @foreach (var join in Model.Courses)
+        {
+            <li>do you want to remove student from course: @join.Course.CourseName ? </li>
+            @using (Html.BeginForm("DeleteCourse", "Students"))
+            {
+                @Html.Hidden("joinId", @join.EnrollmentId)
+                <input type="submit" value="delete"/>
+            }
+        }
+</ul>
+
+<p>@Html.ActionLink("Back to student list", "Index")</p>
+<p>@Html.ActionLink("Edit student", "Edit", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Delete student", "Delete", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Add a course", "AddCourse", new { id = Model.StudentId })</p>

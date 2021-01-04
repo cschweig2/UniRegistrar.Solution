@@ -8,6 +8,6 @@ namespace UniRegistrar.Models
         public DbSet<Student> Students { get; set; }
         public DbSet<Enrollment> Enrollment { get; set; }
 
-        public UniRegistrarListContext(DbContextOptions options) : base(options) { }
+        public UniRegistrarContext(DbContextOptions options) : base(options) { }
     }
 }
