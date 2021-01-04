@@ -2,7 +2,7 @@
 
 ## Created by: Chelsea Becker and Agata Kolodziej, last modified 01/04/2021
 
-## Description: A program using EF and MVC framework to store information from a university's Registrar.
+## Description: A program using EF and MVC framework to store information in a university's Registrar.
 
 ## Specs:
 
