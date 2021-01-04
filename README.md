@@ -1,26 +1,23 @@
 ## Animal Shelter
 
-## Created by: Chelsea Becker and Patrick Osten, last modified 12/23/2020
+## Created by: Chelsea Becker and Agata Kolodziej, last modified 01/04/2021
 
-## Description: A basic MVC website with a database of animals and human (employed) occupants currently in a shelter.
+## Description: A program using EF and MVC framework to store information from a university's Registrar.
 
 ## Specs:
 
- 1. User should be able to add an animal to the shelter's database.
- 2. User should be able to add and sort animals based on type, breed, gender and date. 
- 3. User should be able to create a Occupant category to sort occupants of the animal shelter into (part-time employee, vet doc, animal, etc.)
+ 1. As a registrar, I want to enter a student, so I can keep track of all students enrolled at this University. I should be able to provide a name and date of enrollment.
 
-## Technologies used: 
+## Technologies used:
 
 * C#
 * ASP.NET Core
 * MySql
 * Entity Core
-* Markdown
 * Razor
 * HTML
 * CSS
 
 ## Licensing:
 
-Licensed under [MIT] Copyright Chelsea Becker and Patrick Osten
+Licensed under [MIT] Copyright Chelsea Becker and Agata Kolodziej
