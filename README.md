@@ -8,6 +8,8 @@
 
  1. As a registrar, I want to enter a student, so I can keep track of all students enrolled at this University. I should be able to provide a name and date of enrollment.
 
+ TODO Create course delete view, create add course view
+
 ## Technologies used:
 
 * C#
