@@ -1,4 +1,4 @@
-## Animal Shelter
+## University Registrar
 
 ## Created by: Chelsea Becker and Agata Kolodziej, last modified 01/04/2021
 
