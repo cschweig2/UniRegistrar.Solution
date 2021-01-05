@@ -23,19 +23,8 @@ else
     </ul>
 }
 
-<ul>
-    @foreach (var join in Model.Courses)
-        {
-            <li>do you want to remove student from course: @join.Course.CourseName ? </li>
-            @using (Html.BeginForm("DeleteCourse", "Students"))
-            {
-                @Html.Hidden("joinId", @join.EnrollmentId)
-                <input type="submit" value="delete"/>
-            }
-        }
-</ul>
-
 <p>@Html.ActionLink("Back to student list", "Index")</p>
+<p>@Html.ActionLink("Back to home", "Index", "Home")</p>
 <p>@Html.ActionLink("Edit student", "Edit", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Delete student", "Delete", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Add a course", "AddCourse", new { id = Model.StudentId })</p>
