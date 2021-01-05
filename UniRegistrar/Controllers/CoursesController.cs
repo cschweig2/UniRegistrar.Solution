@@ -73,6 +73,5 @@ namespace UniRegistrar.Controllers
             return RedirectToAction("Index");
         }
 
-
     }
 }

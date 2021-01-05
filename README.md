@@ -11,6 +11,9 @@
  3. As a registrar, I want to be able to assign students to a course, so that teachers know which students are in their course. A course can have many students and a student can take many courses at the same time.
  4. As a registrar, I want to be able to create departments. A student can be assigned to a department when they declare their major and a course can be assigned to a department when it is created.
 
+ // TODO need to add to the students create view to allow to add major
+ // TODO in courses we need to make an association with departments
+
 ## Technologies used:
 
 * C#

@@ -1,0 +1,31 @@
+@* @{
+    Layout = "_Layout";
+}
+
+@model UniRegistrar.Models.Major
+
+<h1>Major Details</h1>
+<br>
+<h3>Major Name: @Html.DisplayFor(model => model.StudentName)</h3>
+@* stretch goal: Major Description *@
+
+@if (@Model.Majors.Count == 0)
+{
+    <p>This major is not part of a department</p>
+}
+else
+{
+    <h2>Courses this student is enrolled in:</h2>
+    <ul>
+        @foreach (var join in Model.Courses)
+            {
+                <li>@join.Course.CourseName</li>
+            }
+    </ul>
+}
+
+<p>@Html.ActionLink("Back to student list", "Index")</p>
+<p>@Html.ActionLink("Back to home", "Index", "Home")</p>
+<p>@Html.ActionLink("Edit student", "Edit", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Delete student", "Delete", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Add a course", "AddCourse", new { id = Model.StudentId })</p> *@
