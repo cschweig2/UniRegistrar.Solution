@@ -1,0 +1,43 @@
+@{
+    Layout = "_Layout";
+}
+
+@model UniRegistrar.Models.Major
+
+<h1>Edit</h1>
+
+<h4>Edit this major: @Html.DisplayFor(model => model.MajorName)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.MajorId)
+
+    <br>
+
+    @Html.LabelFor(model => model.MajorName)
+    @Html.EditorFor(model => model.MajorName)
+
+    <br>
+
+
+    @Html.Label("Select department")
+    @Html.DropDownList("DepartmentId")
+
+    <br>
+
+    <input type="submit" value="Save" />
+}
+<ul>
+    @* @foreach (var join in Model.Departments)
+        {
+            <li>Do you want to remove this major from this department: @join.Department.DepartmentName ? </li>
+            @using (Html.BeginForm("DeleteDepartment", "Majors"))
+            {
+                @Html.Hidden("joinId", @join.EnrollmentId)
+                <input type="submit" value="delete"/>
+            }
+        } *@
+</ul>
+
+<p>@Html.ActionLink("Back to list of majors", "Index")</p>
+<p>@Html.ActionLink("Back to home", "Index", "Home")</p>

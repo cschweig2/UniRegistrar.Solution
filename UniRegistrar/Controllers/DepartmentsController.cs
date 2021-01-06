@@ -44,9 +44,33 @@ namespace UniRegistrar.Controllers
                 return View(thisDepartment);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var thisDepartment = _db.Departments.FirstOrDefault(dept => dept.DepartmentId == id);
+            return View(thisDepartment);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Department department)
+        {
+            _db.Entry(department).State = EntityState.Modified;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Delete(int id)
         {
-            // needs code
+            var thisDepartment = _db.Departments.FirstOrDefault(dept => dept.DepartmentId == id);
+            return View(thisDepartment);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var thisDepartment = _db.Departments.FirstOrDefault(dept => dept.DepartmentId == id);
+            _db.Departments.Remove(thisDepartment);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

@@ -1,0 +1,30 @@
+@{
+    Layout = "_Layout";
+}
+
+@model UniRegistrar.Models.Department;
+
+<h2>Department Details</h2>
+<hr />
+<h3>Department Name: @Html.DisplayFor(model => model.DepartmentName)</h3>
+@* add department *@
+
+@if (@Model.Majors.Count == 0)
+{
+    <p>This department does not have any majors added yet</p>
+}
+else
+{
+    <h4>Majors in this department:</h4>
+    <ul>
+    @foreach (var join in Model.Majors)
+        {
+            <li>@join.Major.MajorName</li>
+        }
+    </ul>
+}
+
+<p>@Html.ActionLink("Back to departments", "Index")</p>
+<p>@Html.ActionLink("Edit department", "Edit", new { id = Model.DepartmentId })</p>
+<p>@Html.ActionLink("Delete department", "Delete", new { id = Model.DepartmentId })</p>
+<p>@Html.ActionLink("Back to home", "Index", "Home")</p>

@@ -1,21 +1,27 @@
-@* @{
+@{
     Layout = "_Layout";
 }
-
+@using UniRegistrar.Models
 @model UniRegistrar.Models.Major
 
 <h1>Major Details</h1>
 <br>
-<h3>Major Name: @Html.DisplayFor(model => model.StudentName)</h3>
+<h3>Major Name: @Html.DisplayFor(model => model.MajorName)</h3>
+<h3>Major Department:</h3>
 @* stretch goal: Major Description *@
 
-@if (@Model.Majors.Count == 0)
+@* @foreach(var join in Model.Departments)
 {
-    <p>This major is not part of a department</p>
+    <li>@join.Department.DepartmentName</li>
+} *@
+
+@if (@Model.Courses.Count == 0)
+{
+    <p>This major does not have any courses</p>
 }
 else
 {
-    <h2>Courses this student is enrolled in:</h2>
+    <h2>Courses for this major:</h2>
     <ul>
         @foreach (var join in Model.Courses)
             {
@@ -24,8 +30,8 @@ else
     </ul>
 }
 
-<p>@Html.ActionLink("Back to student list", "Index")</p>
+<p>@Html.ActionLink("Back to the list of majors", "Index")</p>
 <p>@Html.ActionLink("Back to home", "Index", "Home")</p>
-<p>@Html.ActionLink("Edit student", "Edit", new { id = Model.StudentId })</p>
+@* <p>@Html.ActionLink("Edit student", "Edit", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Delete student", "Delete", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Add a course", "AddCourse", new { id = Model.StudentId })</p> *@

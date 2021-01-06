@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+@model UniRegistrar.Models.Department
+
+<h1>Create a department</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.DepartmentName)
+    @Html.TextBoxFor(model => model.DepartmentName)
+
+    <input type="submit" value="Add new department" class="btn btn-default"/>
+}
+<p>@Html.ActionLink("Show all departments", "Index")</p>
+<p>@Html.ActionLink("Back to home", "Index", "Home")</p>
